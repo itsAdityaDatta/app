@@ -1,12 +1,10 @@
 <?php session_start();?>
 <?php
   ob_start(); 
+  
   if(isset($_POST['sign_up']) && !empty($_POST) ){
     $con = mysqli_connect("localhost",'root');
-    if($con){
-        echo "<script> console.log('MySQL Connection Successful');";
-    }
-    else{ 
+    if(!$con){
       $_SESSION["error"] = 4;
       header('location: landing.php');
       exit();
@@ -18,6 +16,7 @@
     $fname = htmlentities(mysqli_real_escape_string($con, $_POST['fname'])) ;
     $email = htmlentities(mysqli_real_escape_string($con, $_POST['email'])) ;
     $pswd = htmlentities(mysqli_real_escape_string($con, $_POST['pswd'])) ;
+    $hashed_pswd = password_hash($pswd, PASSWORD_DEFAULT); 
 
     $check_email_query = "select userinfo.uname from userinfo where email = '$email'";
     $run_email_query = mysqli_query($con, $check_email_query);
@@ -29,17 +28,17 @@
       exit();
     }
 
-    $query = "insert into userinfo (uname, fname, email, pswd) values ('$uname', '$fname', '$email', '$pswd')";
+    $query = "insert into userinfo (uname, fname, email, pswd) values ('$uname', '$fname', '$email', '$hashed_pswd')";
     $done = mysqli_query($con, $query);
+
     if(!$done){
       $_SESSION["error"] = 2;
       header('location: landing.php');
       exit();
     }
-    else{
-      $_SESSION["error"] = 3;
-      header('location: landing.php');
-    }
+
+    $_SESSION["error"] = 3;
+    header('location: landing.php');
   }
 
 ?>

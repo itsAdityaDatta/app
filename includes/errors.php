@@ -27,7 +27,7 @@
     else if($_SESSION['error'] == 5){
       echo "<script> document.getElementById('login-alert').style.display = 'block'; </script>";
       echo "<script> document.getElementById('login-alert').className = 'alert alert-danger'; </script>";
-      echo "<script> document.getElementById('login-alert').innerHTML = 'ERROR: The email you entered is not registered'; </script>";
+      echo "<script> document.getElementById('login-alert').innerHTML = 'ERROR: Email not registered'; </script>";
     }
     else if($_SESSION['error'] == 6){
       echo "<script> document.getElementById('login-alert').style.display = 'block'; </script>";
