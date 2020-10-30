@@ -1,12 +1,12 @@
 <br>
 <div class="container bg-white p-3 mt-5">    
-        <div id="loginbox" style="margin-top:40px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div id="loginbox" style="margin-top:30px; margin-top:30px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
                         <div class="panel-title" style="font-size:34px; font-family:Abel;">Sign In</div>
-                        <div style="float:right; font-size: 80%; position: relative;"><a href="#">Forgot password?</a></div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
                     </div>     
-                    <div style="padding-top:30px" class="panel-body" >
+                    <div style="padding-top:20px" class="panel-body" >
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
@@ -27,7 +27,7 @@
                             <div class="input-group">
                                 <div style="margin-top:10px" class="form-group">
                                     <div class="col-sm-12 controls">
-                                    <button id="btn-login" type="submit" name="log_in" class="btn btn-info"><i class="icon-hand-right"></i> login</button>
+                                    <button id="btn-login" type="submit" name="log_in" class="btn btn-info"><i class="icon-hand-right"></i> Login</button>
                                       <a id="btn-register" class="btn btn-primary">Login via Google</a>
 
                                     </div>
@@ -40,7 +40,7 @@
                                     <div class="col-md-12 control">
                                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%; font-family: Abel;" >
                                             Don't have an account? 
-                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                        <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show();">
                                             Sign Up Here
                                         </a>
                                         </div>
@@ -53,7 +53,7 @@
                         </div>                     
                     </div>  
         </div>
-        <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div id="signupbox" style="display:none; margin-top:30px; margin-bottom:30px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info">
 
 
@@ -64,7 +64,7 @@
                         </div>  
                       <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">    
 
-                        <div class="panel-body" >
+                        <div class="panel-body">
                             <form id="signupform" action="register.php" class="form-horizontal" role="form" method="POST">
                                 
                                 <div id="signupalert" style="display:none" class="alert alert-danger">

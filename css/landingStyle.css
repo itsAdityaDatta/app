@@ -9,8 +9,9 @@ html{
 }
 
 body{ 
-    background: linear-gradient(110deg, white 60%, #66D0FF 40%);
-    font-size: 18px;
+    background: linear-gradient(90deg, white 70%, #66D0FF 40%);
+    font-size: 20px;
+    font-family: "Abel";
 }
 
 .container{

@@ -2,6 +2,7 @@
 <?php
   ob_start(); 
   
+  if($_SESSION['id'] != NULL) header('location: landing.php');
   if(isset($_POST['sign_up']) && !empty($_POST) ){
     $con = mysqli_connect("localhost",'root');
     if(!$con){

@@ -1,7 +1,8 @@
 <?php session_start();?>
 <?php
   ob_start(); 
-
+  
+  if($_SESSION['id'] != NULL) header('location: landing.php');
   if(isset($_POST['log_in']) && !empty($_POST) ){
     $con = mysqli_connect("localhost",'root');
     if(!$con){
@@ -28,7 +29,7 @@
     $arr = mysqli_fetch_assoc($run_email_query);
     if( password_verify($pswd, $arr["pswd"]) ){
       $_SESSION["error"] = 0;
-      $_SESSION["email"] = $email;
+      $_SESSION["id"] = $arr["id"];
       header('location: home.php');
       exit();
     }
